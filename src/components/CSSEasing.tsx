@@ -1,5 +1,5 @@
 import { Copy } from "lucide-react";
-import type { Easing } from "../types/easings";
+
 import { Button } from "./ui/button";
 import {
   Select,
@@ -11,6 +11,7 @@ import {
   SelectGroup,
 } from "./ui/select";
 import { DURATION_TOKEN } from "../lib/duration-tokens";
+import type { Easing } from "../lib/css-easings";
 
 interface Props {
   easing: Easing;
