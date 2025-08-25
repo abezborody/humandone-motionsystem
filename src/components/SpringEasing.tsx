@@ -37,12 +37,12 @@ export const SpringEasing = ({
     const container = dotRef.current.parentElement;
     const dotWidth = dotRef.current.offsetWidth;
     const containerWidth = container
-      ? container.clientWidth - dotWidth - 20
+      ? container.clientWidth - dotWidth - 32
       : 200;
 
     // Set animation target based on current direction
-    const fromX = animateRight ? 16 : containerWidth;
-    const toX = animateRight ? containerWidth : 16;
+    const fromX = animateRight ? 0 : containerWidth;
+    const toX = animateRight ? containerWidth : 0;
 
     // Animate with spring physics
     controlsRef.current = animate(
@@ -87,7 +87,7 @@ export const SpringEasing = ({
         <div
           ref={dotRef}
           className="absolute top-[60%] w-6 h-6 bg-[#B608FF] rounded -translate-y-1/2"
-          style={{ left: 0 }}
+          style={{ left: 16 }}
         />
         <div className="flex items-center justify-between p-2">
           <p className="text-xs text-mono text-gray-600 pl-1">Spring Preview</p>
@@ -96,7 +96,7 @@ export const SpringEasing = ({
             variant="secondary"
             size="smallIcon"
             onClick={handlePlayAnimation}
-            disabled={isAnimating}
+            // disabled={isAnimating}
           >
             <Play className="h-3 w-3" />
           </Button>
